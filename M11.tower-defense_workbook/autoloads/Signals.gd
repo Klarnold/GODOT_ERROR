@@ -1,0 +1,16 @@
+extends Node
+
+
+signal player_health_changed
+
+
+signal player_lost
+
+
+signal player_won
+
+
+signal mob_died
+
+
+signal place_turret(pos: Vector2, packed_weapon: PackedScene)

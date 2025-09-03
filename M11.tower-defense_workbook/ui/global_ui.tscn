@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://o1x2urotj40c"]
+[gd_scene load_steps=3 format=3 uid="uid://o1x2urotj40c"]
 
 [ext_resource type="Script" uid="uid://dvqmq7nf76oxk" path="res://ui/global_ui.gd" id="1_a31wk"]
+[ext_resource type="PackedScene" uid="uid://cro7c40rw0msp" path="res://ui/pause_menu.tscn" id="2_d8w1j"]
 
 [node name="GlobalUI" type="CanvasLayer"]
 process_mode = 3
@@ -143,3 +144,7 @@ theme_override_colors/font_color = Color(0.199675, 0.842639, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 flat = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_d8w1j")]
+unique_name_in_owner = true
+visible = false

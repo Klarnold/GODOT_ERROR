@@ -14,3 +14,9 @@ signal mob_died
 
 
 signal place_turret(pos: Vector2, packed_weapon: PackedScene)
+
+
+signal show_pause_menu
+
+
+signal close_pause_menu

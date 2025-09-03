@@ -9,3 +9,4 @@ class_name PauseMenu extends Control
 
 func _ready() -> void:
 	_pause_button.pressed.connect(get_tree().quit)
+	

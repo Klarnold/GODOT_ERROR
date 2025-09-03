@@ -7,11 +7,13 @@ extends CanvasLayer
 @onready var _win_menu: Control = %WinMenu
 @onready var _win_restart_button: Button = %WinRestartButton
 @onready var _win_quit_button: Button = %WinQuitButton
+@onready var _pause_menu: PauseMenu = %PauseMenu
 
 
 func _ready() -> void:
 	Signals.player_lost.connect(_show_game_over_menu)
 	Signals.player_won.connect(_show_win_menu)
+	Signals.show_pause_menu.connect(_on_show_pause_menu)
 	
 	_win_restart_button.pressed.connect(func() -> void:
 									_win_menu.visible = false
@@ -33,6 +35,10 @@ func _show_game_over_menu() -> void:
 func _show_win_menu() -> void:
 	get_tree().paused = true
 	_win_menu.visible = true
+
+
+func _on_show_pause_menu() -> void:
+	_pause_menu.visible = true
 
 
 func _restart_game() -> void:

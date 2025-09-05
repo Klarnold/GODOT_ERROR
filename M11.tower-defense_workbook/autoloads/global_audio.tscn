@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jqysw0ij7j3n"]
+
+[ext_resource type="AudioStream" uid="uid://bmh8qjv1xtrch" path="res://assets/audio/freepik-cold-steel-tears.mp3" id="1_6pv8r"]
+
+[node name="GlobalAudio" type="AudioStreamPlayer"]
+stream = ExtResource("1_6pv8r")
+autoplay = true
+bus = &"Music"

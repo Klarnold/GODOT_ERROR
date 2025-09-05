@@ -10,6 +10,9 @@ func _ready() -> void:
 	for upgrade_round: UpgradeRound in _upgrade_wheel.get_children().slice(1):
 		if get_parent() is Turret:
 			upgrade_round._turret = get_parent()
+	
+	stats = preload("res://turrets/weapons/homing_turret_stats.tres")
+	_update_stats()
 
 
 func _physics_process(delta: float) -> void:

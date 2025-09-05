@@ -8,5 +8,10 @@ class_name PauseMenu extends Control
 
 
 func _ready() -> void:
-	_pause_button.pressed.connect(get_tree().quit)
-	
+	_pause_button.pressed.connect(_on_pause_button_pressed)
+
+
+func _on_pause_button_pressed() -> void:
+	var new_screen = Popup.new()
+	new_screen.visible = true
+	get_tree().current_scene.add_child(new_screen)

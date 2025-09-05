@@ -9,7 +9,7 @@ class_name WeaponStats extends Resource
 	set(new_detection_radius):
 		detection_radius = new_detection_radius
 		emit_changed()
-@export_range(-300.0, 300.0, 0.1) var fire_rate: float = 1.0:
+@export_range(-300.0, 300.0, 0.01) var fire_rate: float = 1.0:
 	set(new_fire_rate):
 		fire_rate = new_fire_rate
 		emit_changed()

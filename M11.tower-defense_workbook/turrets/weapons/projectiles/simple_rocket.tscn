@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://p35padiur02i"]
 
 [ext_resource type="Script" uid="uid://c3befmk6pstrl" path="res://turrets/weapons/projectiles/simple_rocket.gd" id="1_e70mn"]
-[ext_resource type="Texture2D" uid="uid://be5kdh3miv8eq" path="res://turrets/weapons/wave_area.png" id="2_e70mn"]
+[ext_resource type="Texture2D" uid="uid://dmpm4tf4uk7yn" path="res://turrets/weapons/projectiles/rocket.png" id="2_e70mn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e70mn"]
 radius = 7.0

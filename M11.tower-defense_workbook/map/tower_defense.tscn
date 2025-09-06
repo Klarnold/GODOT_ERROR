@@ -482,6 +482,7 @@ position = Vector2(2368, 320)
 
 [node name="Increase" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = 128.0
 offset_top = 960.0
 offset_right = 672.0
@@ -491,6 +492,7 @@ text = "Increase health"
 
 [node name="Decrease" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = 768.0
 offset_top = 960.0
 offset_right = 1312.0

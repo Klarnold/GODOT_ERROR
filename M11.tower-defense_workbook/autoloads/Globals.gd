@@ -6,10 +6,9 @@ var coin_scene: PackedScene = preload("res://pickups/coins/coin.tscn")
 
 var health = 5:
 	set(value):
-		health = clamp(value, 0, 10)
+		health = value
 		Signals.player_health_changed.emit()
-		if health == 0:
-			Signals.player_lost.emit()
+		
 var allowed_to_win: bool = false
 var coins: int = 100:
 	set(value):

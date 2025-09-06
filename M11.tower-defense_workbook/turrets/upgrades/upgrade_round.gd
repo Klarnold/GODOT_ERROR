@@ -52,7 +52,7 @@ func _gui_input(event: InputEvent) -> void:
 						_cost.text = "MAX"
 					break
 			
-			Globals.coins -= _upgrade_res.cost 
+			Globals.coins += _upgrade_res.cost 
 			
 			if _turret == null:
 				Signals.place_turret.emit(get_parent().global_position + get_parent().size/2.0, _upgrade_res.new_weapon_scene)

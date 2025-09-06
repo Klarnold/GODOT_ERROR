@@ -3,6 +3,7 @@ class_name MainMenu extends Control
 
 signal show_settings_main
 signal show_levels_menu
+signal show_credits
 
 
 @onready var _parallax_layer: ParallaxLayer = %ParallaxLayer
@@ -11,6 +12,7 @@ signal show_levels_menu
 @onready var _settings: Button = %Settings
 @onready var _credits: Button = %Credits
 @onready var _exit: Button = %Exit
+@onready var parallax_background: ParallaxBackground = %ParallaxBackground
 
 
 func _ready() -> void:
@@ -33,4 +35,4 @@ func _on_settings_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
-	pass
+	show_credits.emit()

@@ -28,8 +28,10 @@ func _ready() -> void:
 	
 	_main_menu.show_settings_main.connect(_show_settings_main)
 	_main_menu.show_levels_menu.connect(_show_levels_menu)
+	_main_menu.show_credits.connect(_show_credits)
 	_settings_main.show_main_menu.connect(_show_main_menu)
 	_levels_menu.close_levels_menu.connect(_close_levels_menu)
+	_pause_menu.show_pause_menu_settings.connect(_show_settings_main)
 	
 	crash_game.connect(_on_crash_game)
 	
@@ -76,6 +78,7 @@ func _on_crash_game() -> void:
 func _show_settings_main() -> void:
 	_settings_main.visible = true
 	_main_menu.visible = false
+	#_main_menu.parallax_background.visible = false
 
 
 func _show_main_menu() -> void:
@@ -91,3 +94,10 @@ func _close_levels_menu() -> void:
 func _show_levels_menu() -> void:
 	_levels_menu.visible = true
 	_main_menu.visible = false
+	_main_menu.parallax_background.visible = false
+
+
+func _show_credits() -> void:
+	_main_menu.visible = false
+	_main_menu.parallax_background.visible = false
+	add_child(load("res://ui/credits.tscn").instantiate())

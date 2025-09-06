@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cihblnuitub1j"]
 
 [ext_resource type="Script" uid="uid://1b2exo8ylxyr" path="res://ui/main_menu.gd" id="1_0dkrt"]
-[ext_resource type="Texture2D" uid="uid://y6fd3ky043fw" path="res://assets/main_menu_background.jpg" id="1_t7e0r"]
+[ext_resource type="Texture2D" uid="uid://ctslmirq0qlmt" path="res://assets/main_menu.png" id="2_0dkrt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dkrt"]
 bg_color = Color(0.211024, 0.102075, 0.0845112, 0.615686)
@@ -20,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_0dkrt")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+unique_name_in_owner = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 unique_name_in_owner = true
@@ -27,9 +28,9 @@ motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 unique_name_in_owner = true
-position = Vector2(960, 540)
-scale = Vector2(7.41313, 5.53846)
-texture = ExtResource("1_t7e0r")
+position = Vector2(960, 544)
+scale = Vector2(4.17391, 5.06047)
+texture = ExtResource("2_0dkrt")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

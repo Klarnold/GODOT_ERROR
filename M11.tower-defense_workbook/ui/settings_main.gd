@@ -10,7 +10,7 @@ signal show_main_menu
 
 
 func _ready() -> void:
-	_return.pressed.connect(show_main_menu.emit)
+	_return.pressed.connect(set_deferred.bind("visible", false))
 	
 	_music_slider.value_changed.connect(_audio_bus_changed.bind(1))
 	_sounds_slider.value_changed.connect(_audio_bus_changed.bind(2))

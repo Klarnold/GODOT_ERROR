@@ -73,7 +73,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
-text = "Resume"
+text = "Resume 
+(press esc)"
 
 [node name="Quit" type="Button" parent="Panel/VBoxContainer"]
 unique_name_in_owner = true
@@ -82,7 +83,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
-text = "Quit"
+text = "Main menu"
 
 [node name="Control2" type="Control" parent="Panel/VBoxContainer"]
 layout_mode = 2

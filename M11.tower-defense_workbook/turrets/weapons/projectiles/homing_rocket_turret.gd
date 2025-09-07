@@ -2,6 +2,7 @@ class_name HomingRocketTurret extends Weapon
 
 
 @onready var _shoot_marker: Marker2D = %ShootMarker
+@onready var _audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -29,6 +30,7 @@ func shoot() -> void:
 	if _area_2d.get_overlapping_areas().is_empty():
 		return
 	
+	_audio_stream_player.play()
 	var bullet: HomingRocket = preload("res://turrets/weapons/projectiles/auto_aim_rocket.tscn").instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.damage = stats.damage

@@ -16,10 +16,13 @@ signal show_credits
 
 
 func _ready() -> void:
+	GlobalAudio.transition_to(load("res://assets/audio/freepik-cold-steel-tears.mp3"))
+	
 	_play.pressed.connect(_on_play_button_pressed)
 	_settings.pressed.connect(_on_settings_button_pressed)
 	_credits.pressed.connect(_on_credits_button_pressed)
 	_exit.pressed.connect(get_tree().quit)
+	Signals.call_deferred("emit_signal", "main_menu_is_ready", self)
 
 
 func _physics_process(delta: float) -> void:

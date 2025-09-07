@@ -28,9 +28,9 @@ func start_wave() -> void:
 	current_wave.add_child(mob_spawner)
 	mob_spawner.mob_packed = waves[current_wave_idx].mob_packed
 	
-	current_wave.wave_delay_timer.timeout.connect(start_wave)
+	current_wave.start_next_wave.connect(start_wave)
 	current_wave.wave_delay_timer.wait_time = waves[current_wave_idx].next_wave_delay
-	current_wave.wave_delay_timer.start()
+	current_wave.call_deferred("create_new_wave_starter")
 	
 	current_wave_idx += 1
 

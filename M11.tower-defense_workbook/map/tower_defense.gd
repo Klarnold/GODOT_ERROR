@@ -1,4 +1,4 @@
-extends Node2D
+class_name Level extends Node2D
 
 
 @onready var _increase: Button = %Increase
@@ -21,6 +21,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		_check_map_grid(get_global_mouse_position())
 
 func _ready() -> void:
+	GlobalAudio.transition_to(load("res://assets/audio/freepik-cold-steel-tears.mp3"))
+	
 	Signals.mob_died.connect(_check_win)
 	Signals.place_turret.connect(place_turret)
 	

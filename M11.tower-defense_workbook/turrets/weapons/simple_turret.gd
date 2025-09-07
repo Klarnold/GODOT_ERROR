@@ -2,6 +2,7 @@ class_name SimpleTurret extends Weapon
 
 
 @onready var _shoot_marker: Marker2D = %ShootMarker
+@onready var _audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -33,3 +34,5 @@ func shoot() -> void:
 	bullet.rotation = rotation
 	bullet.speed = stats.bullet_speed
 	bullet.max_range = stats.detection_radius
+	
+	_audio_stream_player.play()

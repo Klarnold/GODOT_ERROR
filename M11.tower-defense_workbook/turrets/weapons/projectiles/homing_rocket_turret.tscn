@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm6fg5fkwxqqk"]
+[gd_scene load_steps=13 format=3 uid="uid://bm6fg5fkwxqqk"]
 
 [ext_resource type="Script" uid="uid://bntwx8ebxga2u" path="res://turrets/weapons/projectiles/homing_rocket_turret.gd" id="1_omikj"]
 [ext_resource type="Texture2D" uid="uid://hwqaxrtlk8lo" path="res://turrets/weapons/rocket_launcher.png" id="1_yvmj6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bg3g8nhscm8br" path="res://turrets/upgrades/turret_upgrade.gd" id="6_syecy"]
 [ext_resource type="Texture2D" uid="uid://de4svd4dltypn" path="res://icons/icon_mob.svg" id="7_prvfr"]
 [ext_resource type="Texture2D" uid="uid://ble3d0fr0mb3p" path="res://icons/icon_weapon.svg" id="8_xvnxk"]
+[ext_resource type="AudioStream" uid="uid://x70mmnku300a" path="res://assets/audio/homing_rocket_shoot.mp3" id="9_p2x8e"]
 
 [sub_resource type="Resource" id="Resource_wk2le"]
 script = ExtResource("6_syecy")
@@ -88,3 +89,9 @@ Bullet Speed + 120
 Rotation Speed + 0.8
 Damage - 5
 Detection Radius - 45"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_p2x8e")
+max_polyphony = 16
+bus = &"Sounds"

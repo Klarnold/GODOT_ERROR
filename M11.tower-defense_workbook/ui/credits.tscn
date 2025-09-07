@@ -49,7 +49,8 @@ fov = 90.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="ReturnButton" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 offset_right = 16.0
 offset_bottom = 16.0

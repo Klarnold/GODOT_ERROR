@@ -1,11 +1,13 @@
 @tool
 class_name Wave extends Node2D
 
-#
-#@export var path_2d: Path2D:
-	#set(value):
-		#path_2d = value
-		#update_configuration_warnings()
+
+signal start_next_wave
+
+
+@export var next_wave_grid_offset: Vector2i
+
+
 var path_2d: Path2D = Path2D.new()
 
 @onready var wave_delay_timer: Timer = %WaveDelayTimer
@@ -23,7 +25,20 @@ func _ready() -> void:
 func start_wave() -> void:
 	var spawners = get_children()
 	if get_children().size() > 0:
-		(spawners[0] as MobSpawner).spawn_wave()
+		start_next_wave.emit()
+		for child in spawners:
+			if child is MobSpawner:
+				child.spawn_wave()
+
+
+func create_new_wave_starter() -> void:
+	var new_wave_starter: NextWave = load("res://map/next_wave.tscn").instantiate()
+	
+	new_wave_starter.position = next_wave_grid_offset * 64 # NOTE 64 - размерность игровой сетки в пикселях
+	new_wave_starter.wait_time = wave_delay_timer.wait_time
+	new_wave_starter.next_wave_pressed.connect(start_wave)
+	
+	add_child(new_wave_starter)
 
 
 func set_path(path: PackedVector2Array):

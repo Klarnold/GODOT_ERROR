@@ -20,3 +20,6 @@ signal show_pause_menu
 
 
 signal close_pause_menu
+
+
+signal main_menu_is_ready(new_main_menu: MainMenu)

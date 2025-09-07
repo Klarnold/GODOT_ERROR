@@ -5,6 +5,7 @@ class_name Coin extends Area2D
 
 
 @onready var _coin_shape: CollisionShape2D = %CoinShape
+@onready var _audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 
 var _value: int = 10
@@ -19,6 +20,7 @@ func _ready() -> void:
 
 func _pick_up() -> void:
 	_coin_shape.set_deferred("disabled", true)
+	_audio_stream_player.play()
 	
 	if _anim_tween:
 		_anim_tween.kill()

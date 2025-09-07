@@ -28,8 +28,6 @@ func _ready() -> void:
 	_spawn_cooldown_timer.wait_time = spawn_interval
 	
 	assert(_path_2d != null, "%s _path_2d is null" % name)
-	
-	spawn_wave()
 
 
 func spawn_wave() -> void:

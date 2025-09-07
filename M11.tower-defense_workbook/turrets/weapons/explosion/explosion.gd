@@ -1,6 +1,9 @@
 extends Area2D
 
 
+@onready var _audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+
+
 var damage:float = 0.0
 
 
@@ -12,6 +15,8 @@ func _ready() -> void:
 
 
 func explode() -> void:
+	_audio_stream_player.play()
+	
 	for mob in get_overlapping_areas():
 		if mob is Mob:
 			mob.take_damage(damage)
@@ -20,4 +25,4 @@ func explode() -> void:
 			damage_indicator.global_position = mob.global_position
 			damage_indicator.display_amount(damage)
 	
-	call_deferred("queue_free")
+	_audio_stream_player.finished.connect(call_deferred.bind("queue_free"))

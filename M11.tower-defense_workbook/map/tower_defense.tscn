@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bhxv7c3w0bk6t"]
+[gd_scene load_steps=27 format=4 uid="uid://bhxv7c3w0bk6t"]
 
 [ext_resource type="Texture2D" uid="uid://bm5nxkq3f056o" path="res://map/towerdefense_tilemap.png" id="1_1y77r"]
 [ext_resource type="Script" uid="uid://ct878wuwftr33" path="res://map/tower_defense.gd" id="1_b0bcl"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bf8paumt0pffp" path="res://mob_mouse.tscn" id="6_jnkrx"]
 [ext_resource type="PackedScene" uid="uid://bf1l4cch62oxk" path="res://pickups/coins/coin.tscn" id="8_0xtjd"]
 [ext_resource type="PackedScene" uid="uid://cl6nk7ygxt8uu" path="res://pickups/coin_collector.tscn" id="9_b5xiv"]
+[ext_resource type="PackedScene" uid="uid://di6w0cei5bv0q" path="res://map/next_wave.tscn" id="11_oxddf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y77r"]
 resource_name = "Grass"
@@ -365,72 +366,72 @@ sources/1 = SubResource("TileSetAtlasSource_bw3qo")
 [sub_resource type="Resource" id="Resource_dwxl7"]
 script = ExtResource("3_xnh7h")
 mob_amount = 10
-spawn_delay = 0.1
+spawn_delay = 1.0
 mob_packed = ExtResource("6_jnkrx")
-next_wave_delay = 3.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_0xtjd"]
 script = ExtResource("3_xnh7h")
 mob_amount = 15
 spawn_delay = 1.2
 mob_packed = ExtResource("6_jnkrx")
-next_wave_delay = 5.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_oxddf"]
 script = ExtResource("3_xnh7h")
 mob_amount = 5
-spawn_delay = 0.2
+spawn_delay = 2.0
 mob_packed = ExtResource("6_b5xiv")
-next_wave_delay = 5.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_rrpov"]
 script = ExtResource("3_xnh7h")
 mob_amount = 12
-spawn_delay = 0.2
+spawn_delay = 1.0
 mob_packed = ExtResource("6_b5xiv")
-next_wave_delay = 5.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_xljp8"]
 script = ExtResource("3_xnh7h")
 mob_amount = 30
-spawn_delay = 0.3
+spawn_delay = 2.0
 mob_packed = ExtResource("6_jnkrx")
-next_wave_delay = 10.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_yrmkm"]
 script = ExtResource("3_xnh7h")
 mob_amount = 11
-spawn_delay = 0.7
+spawn_delay = 4.0
 mob_packed = ExtResource("6_b5xiv")
-next_wave_delay = 5.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_txabh"]
 script = ExtResource("3_xnh7h")
 mob_amount = 40
-spawn_delay = 0.2
+spawn_delay = 1.0
 mob_packed = ExtResource("6_jnkrx")
-next_wave_delay = 5.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_krvi2"]
 script = ExtResource("3_xnh7h")
 mob_amount = 40
 spawn_delay = 1.0
 mob_packed = ExtResource("6_b5xiv")
-next_wave_delay = 8.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_rwibm"]
 script = ExtResource("3_xnh7h")
 mob_amount = 20
-spawn_delay = 0.3
+spawn_delay = 1.0
 mob_packed = ExtResource("6_jnkrx")
-next_wave_delay = 10.0
+next_wave_delay = 60.0
 
 [sub_resource type="Resource" id="Resource_kct7y"]
 script = ExtResource("3_xnh7h")
 mob_amount = 50
-spawn_delay = 0.5
+spawn_delay = 1.0
 mob_packed = ExtResource("6_b5xiv")
-next_wave_delay = 1.0
+next_wave_delay = 60.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b0bcl"]
 radius = 30.0167
@@ -455,33 +456,43 @@ waves = Array[ExtResource("3_xnh7h")]([SubResource("Resource_dwxl7"), SubResourc
 
 [node name="Wave" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(2368, 320)
+next_wave_grid_offset = Vector2i(-8, 0)
 
 [node name="Wave2" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(1472, -384)
+next_wave_grid_offset = Vector2i(0, 7)
 
 [node name="Wave3" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(1472, -384)
+next_wave_grid_offset = Vector2i(0, 7)
 
 [node name="Wave4" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(1472, -384)
+next_wave_grid_offset = Vector2i(0, 7)
 
 [node name="Wave5" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(1472, -384)
+next_wave_grid_offset = Vector2i(0, 7)
 
 [node name="Wave6" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(1472, -384)
+next_wave_grid_offset = Vector2i(0, 7)
 
 [node name="Wave7" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(2368, 320)
+next_wave_grid_offset = Vector2i(-8, 0)
 
 [node name="Wave8" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(2368, 320)
+next_wave_grid_offset = Vector2i(-8, 0)
 
 [node name="Wave9" parent="WavesManager" instance=ExtResource("5_b0bcl")]
 position = Vector2(2368, 320)
+next_wave_grid_offset = Vector2i(-8, 0)
 
 [node name="Increase" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = 128.0
 offset_top = 960.0
 offset_right = 672.0
@@ -491,6 +502,7 @@ text = "Increase health"
 
 [node name="Decrease" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = 768.0
 offset_top = 960.0
 offset_right = 1312.0
@@ -525,3 +537,9 @@ position = Vector2(576, 180)
 position = Vector2(588, 256)
 
 [node name="CoinCollector" parent="." instance=ExtResource("9_b5xiv")]
+
+[node name="NextWave" parent="." instance=ExtResource("11_oxddf")]
+offset_left = 1280.0
+offset_top = 64.0
+offset_right = 1280.0
+offset_bottom = 64.0
